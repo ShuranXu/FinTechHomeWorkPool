@@ -1,0 +1,30 @@
+Card_Holder
+-
+id SERIAL PK
+name  VARCHAR(30) 
+
+Credit_Card
+-
+card BIGINT PK
+cardholder_id INT FK - Card_Holder.id
+
+Merchant
+-
+id SERIAL 
+name VARCHAR(255)
+id_merchant_category INT FK - Merchant_Category.id
+
+Merchant_Category
+-
+id SERIAL PK
+name VARCHAR(30)
+
+Transactions
+-
+id INT
+date TIMESTAMP
+amount FLOAT
+card BIGINT FK - Credit_Card.card
+id_merchant INT FK - Merchant.id
+
+
